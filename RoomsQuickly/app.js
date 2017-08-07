@@ -8,6 +8,13 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var api = require('./routes/api');
 var users = require('./routes/users');
+var mongoose = require('mongoose');
+
+// initialize models
+require('./models/model.js');
+
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost:27017/roomsquickly")
 
 var app = express();
 
